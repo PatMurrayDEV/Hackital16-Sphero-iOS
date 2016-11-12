@@ -16,11 +16,13 @@
 		8134AEB11492966B005F5FB4 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8134AEB01492966B005F5FB4 /* ExternalAccessory.framework */; };
 		8134AEB71492966B005F5FB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8134AEB51492966B005F5FB4 /* InfoPlist.strings */; };
 		CD54E7661DD78D3C0074EC6F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */; };
-		DE1D2C4E1A24F29400C00924 /* ButtonDrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1D2C4D1A24F29400C00924 /* ButtonDrive.storyboard */; };
+		CD9F7BD21DD7B792002E3C01 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */; };
+		CD9F7BD41DD7B87F002E3C01 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */; };
+		CD9F7BD61DD7BA73002E3C01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9F7BD51DD7BA73002E3C01 /* Main.storyboard */; };
+		CD9F7BD81DD7BBEF002E3C01 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9F7BD71DD7BBEF002E3C01 /* Launch Screen.storyboard */; };
 		DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFB1B3B471C000D6545 /* RobotKit.framework */; };
 		DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */; };
 		DE526B001B3B471C000D6545 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */; };
-		DE53D088197711BC006E4C0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE53D087197711BB006E4C0B /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,11 +40,14 @@
 		8134AEB61492966B005F5FB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8134AEBA1492966B005F5FB4 /* ButtonDrive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButtonDrive-Prefix.pch"; sourceTree = "<group>"; };
 		CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		DE1D2C4D1A24F29400C00924 /* ButtonDrive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ButtonDrive.storyboard; sourceTree = "<group>"; };
+		CD9F7BCE1DD7B66F002E3C01 /* ButtonDrive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButtonDrive-Bridging-Header.h"; sourceTree = "<group>"; };
+		CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CD9F7BD51DD7BA73002E3C01 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CD9F7BD71DD7BBEF002E3C01 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DE526AFB1B3B471C000D6545 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = ../../frameworks/RobotKit.framework; sourceTree = "<group>"; };
 		DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = ../../frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
 		DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = ../../frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
-		DE53D087197711BB006E4C0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F7BD41DD7B87F002E3C01 /* AudioToolbox.framework in Frameworks */,
+				CD9F7BD21DD7B792002E3C01 /* CoreMotion.framework in Frameworks */,
 				CD54E7661DD78D3C0074EC6F /* CoreBluetooth.framework in Frameworks */,
 				DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */,
 				DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */,
@@ -66,7 +73,6 @@
 		8134AE971492966B005F5FB4 = {
 			isa = PBXGroup;
 			children = (
-				DE53D087197711BB006E4C0B /* Default-568h@2x.png */,
 				8134AEB21492966B005F5FB4 /* ButtonDrive */,
 				8134AEA51492966B005F5FB4 /* Frameworks */,
 				8134AEA31492966B005F5FB4 /* Products */,
@@ -84,6 +90,8 @@
 		8134AEA51492966B005F5FB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */,
+				CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */,
 				CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */,
 				DE526AFB1B3B471C000D6545 /* RobotKit.framework */,
 				DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */,
@@ -104,7 +112,9 @@
 				3F19C53C18FCC78C00F53020 /* ButtonDriveViewController.h */,
 				3F19C53D18FCC78C00F53020 /* ButtonDriveViewController.m */,
 				8134AEB31492966B005F5FB4 /* Supporting Files */,
-				DE1D2C4D1A24F29400C00924 /* ButtonDrive.storyboard */,
+				CD9F7BCE1DD7B66F002E3C01 /* ButtonDrive-Bridging-Header.h */,
+				CD9F7BD51DD7BA73002E3C01 /* Main.storyboard */,
+				CD9F7BD71DD7BBEF002E3C01 /* Launch Screen.storyboard */,
 			);
 			path = ButtonDrive;
 			sourceTree = "<group>";
@@ -151,6 +161,7 @@
 				TargetAttributes = {
 					8134AEA11492966B005F5FB4 = {
 						DevelopmentTeam = CC3KAA4FP8;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -183,8 +194,8 @@
 			files = (
 				8134AEB71492966B005F5FB4 /* InfoPlist.strings in Resources */,
 				3F19C53A18FCC77200F53020 /* README.txt in Resources */,
-				DE53D088197711BC006E4C0B /* Default-568h@2x.png in Resources */,
-				DE1D2C4E1A24F29400C00924 /* ButtonDrive.storyboard in Resources */,
+				CD9F7BD81DD7BBEF002E3C01 /* Launch Screen.storyboard in Resources */,
+				CD9F7BD61DD7BA73002E3C01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,12 +303,14 @@
 		8134AED21492966C005F5FB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = CC3KAA4FP8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ButtonDrive/ButtonDrive-Prefix.pch";
 				INFOPLIST_FILE = "ButtonDrive/ButtonDrive-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -305,6 +318,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -312,12 +329,14 @@
 		8134AED31492966C005F5FB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = CC3KAA4FP8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ButtonDrive/ButtonDrive-Prefix.pch";
 				INFOPLIST_FILE = "ButtonDrive/ButtonDrive-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -325,6 +344,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

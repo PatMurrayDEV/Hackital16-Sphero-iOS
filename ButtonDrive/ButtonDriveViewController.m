@@ -5,6 +5,9 @@
 #import "ButtonDriveViewController.h"
 #import <RobotKit/RobotKit.h>
 #import <RobotUIKit/RobotUIKit.h>
+#import <CoreMotion/CoreMotion.h>
+#import <AudioToolbox/AudioServices.h>
+
 
 @interface ButtonDriveViewController() <RKResponseObserver>
 
@@ -13,7 +16,17 @@
 @property (strong, nonatomic) RKLocatorData *locatorDataStart;
 @property (strong, nonatomic) RKLocatorData *locatorDataMoving;
 
+@property (strong, nonatomic) CMMotionManager *motionManager;
+
+@property double currentMaxAccelX;
+@property double currentMaxAccelY;
+@property double currentMaxAccelZ;
+
 @property BOOL moving;
+
+@property double distance;
+
+@property BOOL stop;
 
 @end
 
@@ -21,6 +34,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    _moving = false;
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(appWillResignActive:)
@@ -36,8 +51,14 @@
 
 	// hook up for robot state changes
 	[[RKRobotDiscoveryAgent sharedAgent] addNotificationObserver:self selector:@selector(handleRobotStateChangeNotification:)];
+    
+    _currentMaxAccelX = 0;
+    _currentMaxAccelY = 0;
+    _currentMaxAccelZ = 0;
+    
 	
 }
+
 
 
 - (void)appDidBecomeActive:(NSNotification*)notification {
@@ -91,31 +112,52 @@
 //    [_calibrateHandler setRobot:nil];
 }
 
-- (IBAction)zeroPressed:(id)sender {
-    _moving = true;
-	[_robot driveWithHeading:0.0 andVelocity:0.2];
-    _locatorDataStart = _locatorDataMoving;
-    NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", _locatorDataStart.position.x, @"cm"]);
-    NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", _locatorDataStart.position.y, @"cm"]);
 
-    [_robot setLEDWithRed:0 green:0 blue:1];
+- (void) startDriving {
+    _locatorDataStart = _locatorDataMoving;
+    [self spheroCommand];
+}
+
+
+- (void) spheroCommand {
+    
+    if (!_stop) {
+        _moving = true;
+        [_robot driveWithHeading:0.0 andVelocity:0.2];
+        
+//        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", _locatorDataStart.position.x, @"cm"]);
+//        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", _locatorDataStart.position.y, @"cm"]);
+        
+        [_robot setLEDWithRed:0 green:0 blue:1];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [self spheroCommand];
+        });
+    } else {
+        [_robot setLEDWithRed:1 green:0 blue:0];
+        [_robot stop];
+        _moving = false;
+        return;
+    }
+
+}
+
+
+- (IBAction)zeroPressed:(id)sender {
+    _distance = 100;
+    _stop = false;
+    [self startDriving];
 }
 
 - (IBAction)stopPressed:(id)sender {
-    [_robot setLEDWithRed:1 green:0 blue:0];
-	[_robot stop];
-    _moving = false;
+    _stop = true;
+    [self spheroCommand];
 }
-
-
-
-
 
 
 - (void)startLocatorStreaming {
     // Register for Locator X,Y position, and X,Y velocity
     RKDataStreamingMask sensorMask = RKDataStreamingMaskLocatorAll;
-    [self.robot sendCommand:[RKSetDataStreamingCommand commandWithRate:10 andMask:sensorMask]];
+    [self.robot sendCommand:[RKSetDataStreamingCommand commandWithRate:5 andMask:sensorMask]];
 }
 
 - (void)handleAsyncMessage:(RKAsyncMessage *)message forRobot:(id<RKRobotBase>)robot {
@@ -127,31 +169,74 @@
         RKLocatorData *locatorData = sensorsData.locatorData;
         _locatorDataMoving = locatorData;
         
-        if (_moving) {
-            if (_locatorDataMoving.position.x - _locatorDataStart.position.x > 10) {
-                NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"]);
-                NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
+//        NSLog(@"x: %@, y: %@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"], [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
+
+        
+        if (!_stop) {
+            if (fabs(_locatorDataMoving.position.x) - fabs(_locatorDataStart.position.x) >= _distance) {
+                NSLog(@"CURRENT x: %@, y: %@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"], [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
+                NSLog(@"x: %@, y: %@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"], [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
                 [self stopPressed:self];
-            } else if (_locatorDataMoving.position.y - _locatorDataStart.position.y > 10) {
-                NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"]);
-                NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
+            } else if (fabs(_locatorDataMoving.position.y) - fabs(_locatorDataStart.position.y) >= _distance) {
+                NSLog(@"CURRENT x: %@, y: %@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"], [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
+                NSLog(@"x: %@, y: %@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"], [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
                 
                 [self stopPressed:self];
             }
         }
         
-        
-        
-        // Print Locator Values
-//        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"]);
-//        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
-//        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.velocity.x, @"cm/s"]);
-//        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", locatorData.velocity.y, @"cm/s"]);
+
     }
 }
 
+- (IBAction)swingButtonTouchDown:(id)sender {
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    
+    [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
+        
+        if(fabs(motion.userAcceleration.x) > fabs(_currentMaxAccelX)) {
+            _currentMaxAccelX = motion.userAcceleration.x;
+        }
+        if(fabs(motion.userAcceleration.y) > fabs(_currentMaxAccelY)) {
+            _currentMaxAccelY = motion.userAcceleration.y;
+        }
+        if(fabs(motion.userAcceleration.z) > fabs(_currentMaxAccelZ)) {
+            _currentMaxAccelZ = motion.userAcceleration.z;
+        }
+        
+    }];
+    
+}
 
 
+- (IBAction)swingButtonRelease:(id)sender {
+    
+    [self.motionManager stopDeviceMotionUpdates];
+    
+    
+    NSLog(@"MOTION ACC - x: %f, y: %f, z: %f", _currentMaxAccelX, _currentMaxAccelY, _currentMaxAccelZ);
+    
+    
+    
+    _distance = (fabs(_currentMaxAccelZ) / 4) * 150;
+    
+    if (_distance >= 150) {
+        _distance = 150;
+    }
+    
+    _stop = false;
+    [self startDriving];
+    
+    
+    
+    _currentMaxAccelX = 0;
+    _currentMaxAccelY = 0;
+    _currentMaxAccelZ = 0;
+    
+    
+    
+}
 
 
 
