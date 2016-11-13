@@ -7,6 +7,8 @@
 //
 
 #import "GameBoardViewController.h"
+#import "PJMRobotController.h"
+#import <CoreImage/CoreImage.h>
 
 @interface GameBoardViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -55,14 +57,26 @@
     
     
     [self dismissViewControllerAnimated:YES completion:^{
-        self.imageView.image = [self imageWithImage:image scaledToSize:CGSizeMake(1000, 1000)];
+        
+        
+    
+        
+        UIImage *imageSized =  [self grayscaleImage:[self imageWithImage:image scaledToSize:CGSizeMake(500, 500)]];
+        self.imageView.image = imageSized;
         [self.spinner startAnimating];
+
+        
+
+        
+        [[PJMRobotController sharedSingleton] setImageForGame:imageSized];
+
+
+        [self.spinner stopAnimating];
+        [self startGame];
         
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [self.spinner stopAnimating];
-            [self startGame];
-        });
+
+        
     }];
     
     
@@ -80,6 +94,8 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
+
+
 
 
 

@@ -23,6 +23,8 @@
 		CD9F7BF51DD7E804002E3C01 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7BF41DD7E804002E3C01 /* StartViewController.m */; };
 		CD9F7C101DD7ECEC002E3C01 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C0F1DD7ECEC002E3C01 /* GameBoardViewController.m */; };
 		CD9F7C131DD7F2BA002E3C01 /* PJMRobotController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C121DD7F2BA002E3C01 /* PJMRobotController.m */; };
+		CD9F7C151DD7FB8F002E3C01 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */; };
+		CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7C171DD80C46002E3C01 /* CoreImage.framework */; };
 		DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFB1B3B471C000D6545 /* RobotKit.framework */; };
 		DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */; };
 		DE526B001B3B471C000D6545 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */; };
@@ -54,6 +56,8 @@
 		CD9F7C0F1DD7ECEC002E3C01 /* GameBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
 		CD9F7C111DD7F2BA002E3C01 /* PJMRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMRobotController.h; sourceTree = "<group>"; };
 		CD9F7C121DD7F2BA002E3C01 /* PJMRobotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMRobotController.m; sourceTree = "<group>"; };
+		CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		CD9F7C171DD80C46002E3C01 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		DE526AFB1B3B471C000D6545 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = ../../frameworks/RobotKit.framework; sourceTree = "<group>"; };
 		DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = ../../frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
 		DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = ../../frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */,
 				CD9F7BD41DD7B87F002E3C01 /* AudioToolbox.framework in Frameworks */,
 				CD9F7BD21DD7B792002E3C01 /* CoreMotion.framework in Frameworks */,
 				CD54E7661DD78D3C0074EC6F /* CoreBluetooth.framework in Frameworks */,
@@ -99,6 +104,7 @@
 		8134AEA51492966B005F5FB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F7C171DD80C46002E3C01 /* CoreImage.framework */,
 				CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */,
 				CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */,
 				CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */,
@@ -120,6 +126,7 @@
 				3F19C54418FCC7DF00F53020 /* AppDelegate.m */,
 				3F19C53C18FCC78C00F53020 /* ButtonDriveViewController.h */,
 				3F19C53D18FCC78C00F53020 /* ButtonDriveViewController.m */,
+				CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */,
 				CD9F7C111DD7F2BA002E3C01 /* PJMRobotController.h */,
 				CD9F7C121DD7F2BA002E3C01 /* PJMRobotController.m */,
 				CD9F7BF31DD7E804002E3C01 /* StartViewController.h */,
@@ -223,6 +230,7 @@
 			files = (
 				3F19C53E18FCC78C00F53020 /* ButtonDriveViewController.m in Sources */,
 				CD9F7BF51DD7E804002E3C01 /* StartViewController.m in Sources */,
+				CD9F7C151DD7FB8F002E3C01 /* GameEngine.swift in Sources */,
 				CD9F7C131DD7F2BA002E3C01 /* PJMRobotController.m in Sources */,
 				3F19C53418FCC73B00F53020 /* main.m in Sources */,
 				3F19C54518FCC7DF00F53020 /* AppDelegate.m in Sources */,
