@@ -10,6 +10,8 @@
 #import <CoreMotion/CoreMotion.h>
 #import <AudioToolbox/AudioServices.h>
 #import "ButtonDrive-Swift.h"
+#import <CoreLocation/CoreLocation.h>
+
 
 @interface PJMRobotController() <RKResponseObserver>
 
@@ -23,7 +25,7 @@
 
 @property (strong, nonatomic) PuttPuttGameLogic *gameEngine;
 
-
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
 
@@ -31,6 +33,10 @@
 @property double currentMaxAccelY;
 @property double currentMaxAccelZ;
 
+
+@property double angleStart;
+@property double angleEnd;
+@property double angle;
 
 @end
 
@@ -84,9 +90,15 @@
     
     self.motionManager = [[CMMotionManager alloc] init];
     
-    [self turnME];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager startUpdatingHeading];
+    
+    _angleStart = [self.locationManager heading].trueHeading;
 
 }
+
+
 
 
 
@@ -154,7 +166,7 @@
     
     if (!_stop) {
         _moving = true;
-        [_robot driveWithHeading:0.0 andVelocity:0.2];
+        [_robot driveWithHeading:_angle andVelocity:0.2];
         
         //        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", _locatorDataStart.position.x, @"cm"]);
         //        NSLog(@"%@", [NSString stringWithFormat:@"%.02f  %@", _locatorDataStart.position.y, @"cm"]);
@@ -221,6 +233,8 @@
 }
 
 - (void)swingButtonTouchDown {
+    
+    _angleStart = [self.locationManager heading].trueHeading;
 
     
     [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
@@ -242,18 +256,6 @@
 }
 
 
-- (void) turnME {
-    
-    [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
-        float pitch =  (180/M_PI)*motion.attitude.pitch;
-        float roll = (180/M_PI)*motion.attitude.roll;
-        float yaw = (180/M_PI)*motion.attitude.yaw;
-        
-        [_robot driveWithHeading:360*yaw andVelocity:0];
-        
-    }];
-     
-}
 
 
 - (void)swingButtonRelease {
@@ -261,6 +263,9 @@
     [self.motionManager stopDeviceMotionUpdates];
     
     
+    _angleEnd = [self.locationManager heading].trueHeading;
+    
+    _angle = [self.locationManager heading].trueHeading;
     
     
     NSLog(@"MOTION ACC - x: %f, y: %f, z: %f", _currentMaxAccelX, _currentMaxAccelY, _currentMaxAccelZ);
@@ -274,7 +279,7 @@
     }
     
     _stop = false;
-//    [self startDriving];
+    [self startDriving];
     
     
     
