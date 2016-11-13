@@ -24,12 +24,19 @@ struct Hole  {
 
 @objc class PuttPuttGameLogic : NSObject {
     var chosenHole: Hole
+	
+	@objc override init() {
+		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
+	}
     
     @objc init(image: UIImage, startX: Int, startY: Int, endX: Int, endY: Int) {
         
 //        super.init()
-        
-        chosenHole = Hole(map: PuttPuttGameLogic.pixelValues(fromCGImage: image.cgImage).pixelVals, start: (startX, startY), end: (endX, endY))
+		
+		//commented out second line because it doesn't work with [[Int]], using first to let init work for now
+		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
+		//chosenHole = Hole(map: PuttPuttGameLogic.pixelValues(fromCGImage: image.cgImage).pixelVals, start: (startX, startY), end: (endX, endY))
+		
         
 //        for x in 0...999 {
 //            for y in 0...999 {
@@ -66,7 +73,7 @@ struct Hole  {
     }
 	
 	//Backup plan
-	func predeterminedArray(number: Int) -> Hole {
+	static func predeterminedArray(number: Int) -> Hole {
 		var givingHole: Hole
 		
 		for x in 0...1000 {
