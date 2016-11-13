@@ -110,7 +110,7 @@ struct Hole  {
 				givingHole.map[750][y] = 0
 			}
 			for x in 400...600 {
-				givinghole.map[x][x] = 0
+				givingHole.map[x][x] = 0
 			}
 			
 			givingHole.start = (125, 0)

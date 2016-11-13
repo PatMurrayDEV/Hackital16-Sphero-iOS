@@ -190,7 +190,7 @@
 				ORGANIZATIONNAME = "Orbotix, Inc.";
 				TargetAttributes = {
 					8134AEA11492966B005F5FB4 = {
-						DevelopmentTeam = CC3KAA4FP8;
+						DevelopmentTeam = N5GM564QWL;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -340,7 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CC3KAA4FP8;
+				DEVELOPMENT_TEAM = N5GM564QWL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -355,7 +355,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zachknox.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -369,7 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CC3KAA4FP8;
+				DEVELOPMENT_TEAM = N5GM564QWL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -384,7 +384,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zachknox.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
