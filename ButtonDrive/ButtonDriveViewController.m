@@ -11,6 +11,13 @@
 
 @interface ButtonDriveViewController() <RKResponseObserver>
 
+
+
+@property (weak, nonatomic) IBOutlet UILabel *forceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *strokeLabel;
+
+
+
 @property (strong, nonatomic) RKConvenienceRobot* robot;
 //@property (strong, nonatomic) RUICalibrateGestureHandler *calibrateHandler;
 @property (strong, nonatomic) RKLocatorData *locatorDataStart;
