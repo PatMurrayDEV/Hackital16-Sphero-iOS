@@ -9,12 +9,12 @@ import UIKit
 
 
 struct Hole  {
-    var map: [UInt8]
+    var map: [[Int]]
     var start: (x: Int, y: Int)
     var end: (x: Int, y: Int)
     
     
-    init(map: [UInt8], start: (x: Int, y: Int), end:(x: Int, y: Int)) {
+    init(map: [[Int]], start: (x: Int, y: Int), end:(x: Int, y: Int)) {
         self.map = map
         self.start = start
         self.end = end
@@ -24,12 +24,19 @@ struct Hole  {
 
 @objc class PuttPuttGameLogic : NSObject {
     var chosenHole: Hole
+	
+	@objc override init() {
+		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
+	}
     
     @objc init(image: UIImage, startX: Int, startY: Int, endX: Int, endY: Int) {
         
 //        super.init()
-        
-        chosenHole = Hole(map: PuttPuttGameLogic.pixelValues(fromCGImage: image.cgImage).pixelVals, start: (startX, startY), end: (endX, endY))
+		
+		//commented out second line because it doesn't work with [[Int]], using first to let init work for now
+		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
+		//chosenHole = Hole(map: PuttPuttGameLogic.pixelValues(fromCGImage: image.cgImage).pixelVals, start: (startX, startY), end: (endX, endY))
+		
         
 //        for x in 0...999 {
 //            for y in 0...999 {
@@ -44,17 +51,54 @@ struct Hole  {
     
     // [SUCCESS, STOP]
     @objc func puttGolfBallTo(ballX: Int, ballY: Int) -> [Bool] {
-        if(chosenHole.end.x != ballX && chosenHole.end.y != ballY){
-            return([false, false])
-        }else if(ballX == 0 || ballY == 0){
-            return([false, false])
-        }else{
-            return([true, true])
-        }
-        
-        
+		var succeed: Bool
+		var stop: Bool = false
+		
+        if(chosenHole.end.x == ballX && chosenHole.end.y == ballY) {
+            succeed = true
+		}
+		else {
+			succeed = false
+		}
+	
+		let blackPoint = 20
+			if(chosenHole.map[ballX][ballY] <= blackPoint) { //This line is broken because of stupid UInts
+			stop = true
+		}
+		else {
+			stop = false
+		}
+		
+		return [succeed, stop]
     }
-    
+	
+	//Backup plan
+	static func predeterminedArray(number: Int) -> Hole {
+		var givingHole: Hole
+		
+		for x in 0...1000 {
+			for y in 0...1000 {
+				givingHole.map[x][y] = 0
+			}
+		}
+		for y in 0...1000 {
+			givingHole.map[0][y] = 255
+		}
+		
+		for y in 0...250 {
+			givingHole.map[500][y] = 0
+		}
+		for x in 500...750 {
+			givingHole.map[x][250] = 0
+		}
+		for y in 250...1000 {
+			givingHole.map[750][y] = 0
+		}
+		
+		givingHole.start = (100, 0)
+		givingHole.end = (550, 1000)
+		
+	}
     
     
     static func pixelValues(fromCGImage imageRef: CGImage?) -> (pixelVals: [UInt8], height: Int, width: Int) {
