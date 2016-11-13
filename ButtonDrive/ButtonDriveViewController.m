@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *forceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *strokeLabel;
 
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 
 
 
@@ -50,6 +51,20 @@
     [[PJMRobotController sharedSingleton] stopPressed];
 
 }
+
+- (IBAction)sliderBeSliding:(id)sender {
+
+    double value = 180 - (_slider.value * 360);
+    
+    [[PJMRobotController sharedSingleton].robot driveWithHeading:value andVelocity:0];
+}
+
+- (IBAction)sliderTouchEnd:(id)sender {
+    
+    [self.slider setValue:0.5];
+    
+}
+
 
 
 

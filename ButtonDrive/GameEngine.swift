@@ -9,12 +9,12 @@ import UIKit
 
 
 struct Hole  {
-    var map: [[Int]]
+    var map: [UInt8]
     var start: (x: Int, y: Int)
     var end: (x: Int, y: Int)
     
     
-    init(map: [[Int]], start: (x: Int, y: Int), end:(x: Int, y: Int)) {
+    init(map: [UInt8], start: (x: Int, y: Int), end:(x: Int, y: Int)) {
         self.map = map
         self.start = start
         self.end = end
@@ -29,7 +29,7 @@ struct Hole  {
         
 //        super.init()
         
-        chosenHole = Hole(map: PuttPuttGameLogic.convertImageToArray(image: image), start: (startX, startY), end: (endX, endY))
+        chosenHole = Hole(map: PuttPuttGameLogic.pixelValues(fromCGImage: image.cgImage).pixelVals, start: (startX, startY), end: (endX, endY))
         
 //        for x in 0...999 {
 //            for y in 0...999 {
@@ -81,33 +81,33 @@ struct Hole  {
     };
     
     
-    static func convertImageToArray(image : UIImage) -> [[Int]] {
-        
-        var pixel_vals = pixelValues(fromCGImage: image.cgImage)
-        var map_array = [[Int]]()
-        let array_size = (pixel_vals.height)-1
-        var index = 0
-        for _ in 0...array_size{
-            var row_arr = [Int]()
-            for _ in 0...array_size{
-                
-                if pixel_vals.pixelVals[index] == UInt8(0){
-                    row_arr.append(0);
-                }else{
-                    row_arr.append(255);
-                }
-                index+=1
-            }
-            map_array.append(row_arr);
-        }
-        
-        
-        return map_array;
-        
-        
-        
-    }
-    
+//    static func convertImageToArray(image : UIImage) -> [[UInt8]] {
+//        
+//        var pixel_vals = pixelValues(fromCGImage: image.cgImage)
+//        var map_array = [[UInt8]]()
+//        let array_size = (pixel_vals.height)-1
+//        var index = 0
+//        for _ in 0...array_size{
+//            var row_arr = [UInt8]()
+//            for _ in 0...array_size{
+//                
+//                if pixel_vals.pixelVals[index] == UInt8(0){
+//                    row_arr.append(UInt8(0));
+//                }else{
+//                    row_arr.append(UInt8(255));
+//                }
+//                index+=1
+//            }
+//            map_array.append(row_arr);
+//        }
+//        
+//        
+//        return map_array;
+//        
+//        
+//        
+//    }
+//    
     
     
     

@@ -9,12 +9,16 @@
 #import "GameBoardViewController.h"
 #import "PJMRobotController.h"
 #import <CoreImage/CoreImage.h>
+#import "DrawView.h"
 
 @interface GameBoardViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
+@property (weak, nonatomic) IBOutlet DrawView *drawView;
+
 
 
 @end
@@ -25,6 +29,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _drawView.strokeColor = [UIColor blackColor];
+    _drawView.strokeWidth = 25.0f;
+    _drawView.backgroundColor = [UIColor clearColor];
     
     
     
@@ -61,18 +68,11 @@
         
     
         
-        UIImage *imageSized =  [self grayscaleImage:[self imageWithImage:image scaledToSize:CGSizeMake(500, 500)]];
+        UIImage *imageSized =  [self imageWithImage:image scaledToSize:CGSizeMake(500, 500)];
         self.imageView.image = imageSized;
-        [self.spinner startAnimating];
-
-        
-
-        
-        [[PJMRobotController sharedSingleton] setImageForGame:imageSized];
+//        [self.spinner startAnimating];
 
 
-        [self.spinner stopAnimating];
-        [self startGame];
         
         
 
@@ -88,7 +88,7 @@
     //UIGraphicsBeginImageContext(newSize);
     // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
     // Pass 1.0 to force exact pixel size.
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(newSize, YES, 1.0);
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -101,6 +101,21 @@
 
 - (void) startGame {
     [self performSegueWithIdentifier:@"startGameSegue" sender:self];
+}
+
+
+
+- (IBAction)goButtonTapped:(id)sender {
+    
+    _drawView.backgroundColor = [UIColor whiteColor];
+    
+//    [[PJMRobotController sharedSingleton] setImageForGame:[self imageWithImage:[_drawView imageRepresentation] scaledToSize:CGSizeMake(1000, 1000)]];
+    
+    _drawView.backgroundColor = [UIColor clearColor];
+    
+    [self performSegueWithIdentifier:@"startGameSegue" sender:self];
+
+    
 }
 
 

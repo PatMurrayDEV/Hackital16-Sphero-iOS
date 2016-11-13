@@ -31,6 +31,7 @@
 @property double currentMaxAccelY;
 @property double currentMaxAccelZ;
 
+
 @end
 
 
@@ -80,6 +81,10 @@
     _currentMaxAccelX = 0;
     _currentMaxAccelY = 0;
     _currentMaxAccelZ = 0;
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    
+    [self turnME];
 
 }
 
@@ -216,8 +221,7 @@
 }
 
 - (void)swingButtonTouchDown {
-    
-    self.motionManager = [[CMMotionManager alloc] init];
+
     
     [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
         
@@ -233,12 +237,30 @@
         
     }];
     
+
+    
+}
+
+
+- (void) turnME {
+    
+    [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {
+        float pitch =  (180/M_PI)*motion.attitude.pitch;
+        float roll = (180/M_PI)*motion.attitude.roll;
+        float yaw = (180/M_PI)*motion.attitude.yaw;
+        
+        [_robot driveWithHeading:360*yaw andVelocity:0];
+        
+    }];
+     
 }
 
 
 - (void)swingButtonRelease {
     
     [self.motionManager stopDeviceMotionUpdates];
+    
+    
     
     
     NSLog(@"MOTION ACC - x: %f, y: %f, z: %f", _currentMaxAccelX, _currentMaxAccelY, _currentMaxAccelZ);
@@ -252,7 +274,7 @@
     }
     
     _stop = false;
-    [self startDriving];
+//    [self startDriving];
     
     
     
