@@ -24,6 +24,9 @@ struct Hole  {
 
 @objc class PuttPuttGameLogic : NSObject {
     var chosenHole: Hole
+    
+    
+    var initialValues : (x: Int, y: Int) = (x: 0, y: 0)
 	
 	@objc override init() {
 		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
@@ -74,7 +77,7 @@ struct Hole  {
 	
 	//Backup plan
 	static func predeterminedArray(number: Int) -> Hole {
-		var givingHole: Hole
+		var givingHole: Hole = Hole(map: [[0]], start: (0,0), end: (0,0))
 		
 		for x in 0...1000 {
 			for y in 0...1000 {
@@ -113,9 +116,8 @@ struct Hole  {
 			givingHole.start = (125, 0)
 			givingHole.end = (875, 1000)
 		}
-
-
-		
+        
+        return givingHole;		
 	}
     
     

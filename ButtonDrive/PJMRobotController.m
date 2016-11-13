@@ -38,6 +38,10 @@
 @property double angleEnd;
 @property double angle;
 
+
+@property double initialX;
+@property double inititalY;
+
 @end
 
 

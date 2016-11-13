@@ -30,9 +30,6 @@
 		CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7C171DD80C46002E3C01 /* CoreImage.framework */; };
 		CD9F7C1B1DD80E65002E3C01 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C1A1DD80E65002E3C01 /* DrawView.m */; };
 		CDCF91861DD8422100065B3F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCF91851DD8422100065B3F /* CoreLocation.framework */; };
-		DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFB1B3B471C000D6545 /* RobotKit.framework */; };
-		DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */; };
-		DE526B001B3B471C000D6545 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +66,6 @@
 		CD9F7C191DD80E65002E3C01 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		CD9F7C1A1DD80E65002E3C01 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		CDCF91851DD8422100065B3F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		DE526AFB1B3B471C000D6545 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = ../../frameworks/RobotKit.framework; sourceTree = "<group>"; };
-		DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = ../../frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
-		DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = ../../frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +190,7 @@
 				ORGANIZATIONNAME = "Orbotix, Inc.";
 				TargetAttributes = {
 					8134AEA11492966B005F5FB4 = {
-						DevelopmentTeam = N5GM564QWL;
+						DevelopmentTeam = CC3KAA4FP8;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -346,7 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N5GM564QWL;
+				DEVELOPMENT_TEAM = CC3KAA4FP8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -361,7 +355,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zachknox.ButtonDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -375,7 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N5GM564QWL;
+				DEVELOPMENT_TEAM = CC3KAA4FP8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -390,7 +384,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zachknox.ButtonDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
