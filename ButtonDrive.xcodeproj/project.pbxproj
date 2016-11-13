@@ -24,12 +24,10 @@
 		CD9F7BD61DD7BA73002E3C01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9F7BD51DD7BA73002E3C01 /* Main.storyboard */; };
 		CD9F7BD81DD7BBEF002E3C01 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9F7BD71DD7BBEF002E3C01 /* Launch Screen.storyboard */; };
 		CD9F7BF51DD7E804002E3C01 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7BF41DD7E804002E3C01 /* StartViewController.m */; };
-		CD9F7C101DD7ECEC002E3C01 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C0F1DD7ECEC002E3C01 /* GameBoardViewController.m */; };
 		CD9F7C131DD7F2BA002E3C01 /* PJMRobotController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C121DD7F2BA002E3C01 /* PJMRobotController.m */; };
-		CD9F7C151DD7FB8F002E3C01 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */; };
 		CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7C171DD80C46002E3C01 /* CoreImage.framework */; };
-		CD9F7C1B1DD80E65002E3C01 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C1A1DD80E65002E3C01 /* DrawView.m */; };
 		CDCF91861DD8422100065B3F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCF91851DD8422100065B3F /* CoreLocation.framework */; };
+		CDCF918B1DD88AD600065B3F /* PartyRobotController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCF918A1DD88AD600065B3F /* PartyRobotController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,15 +55,12 @@
 		CD9F7BD71DD7BBEF002E3C01 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CD9F7BF31DD7E804002E3C01 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		CD9F7BF41DD7E804002E3C01 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
-		CD9F7C0E1DD7ECEC002E3C01 /* GameBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardViewController.h; sourceTree = "<group>"; };
-		CD9F7C0F1DD7ECEC002E3C01 /* GameBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
 		CD9F7C111DD7F2BA002E3C01 /* PJMRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJMRobotController.h; sourceTree = "<group>"; };
 		CD9F7C121DD7F2BA002E3C01 /* PJMRobotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJMRobotController.m; sourceTree = "<group>"; };
-		CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		CD9F7C171DD80C46002E3C01 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		CD9F7C191DD80E65002E3C01 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
-		CD9F7C1A1DD80E65002E3C01 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		CDCF91851DD8422100065B3F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CDCF91891DD88AD600065B3F /* PartyRobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartyRobotController.h; path = ../PartyRobotController.h; sourceTree = "<group>"; };
+		CDCF918A1DD88AD600065B3F /* PartyRobotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PartyRobotController.m; path = ../PartyRobotController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,19 +123,16 @@
 			isa = PBXGroup;
 			children = (
 				3F19C53718FCC77200F53020 /* README.txt */,
-				CD9F7C191DD80E65002E3C01 /* DrawView.h */,
-				CD9F7C1A1DD80E65002E3C01 /* DrawView.m */,
 				3F19C54318FCC7DF00F53020 /* AppDelegate.h */,
 				3F19C54418FCC7DF00F53020 /* AppDelegate.m */,
 				3F19C53C18FCC78C00F53020 /* ButtonDriveViewController.h */,
 				3F19C53D18FCC78C00F53020 /* ButtonDriveViewController.m */,
-				CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */,
 				CD9F7C111DD7F2BA002E3C01 /* PJMRobotController.h */,
 				CD9F7C121DD7F2BA002E3C01 /* PJMRobotController.m */,
+				CDCF91891DD88AD600065B3F /* PartyRobotController.h */,
+				CDCF918A1DD88AD600065B3F /* PartyRobotController.m */,
 				CD9F7BF31DD7E804002E3C01 /* StartViewController.h */,
 				CD9F7BF41DD7E804002E3C01 /* StartViewController.m */,
-				CD9F7C0E1DD7ECEC002E3C01 /* GameBoardViewController.h */,
-				CD9F7C0F1DD7ECEC002E3C01 /* GameBoardViewController.m */,
 				8134AEB31492966B005F5FB4 /* Supporting Files */,
 				CD9F7BCE1DD7B66F002E3C01 /* ButtonDrive-Bridging-Header.h */,
 				CD9F7BD51DD7BA73002E3C01 /* Main.storyboard */,
@@ -239,12 +231,10 @@
 			files = (
 				3F19C53E18FCC78C00F53020 /* ButtonDriveViewController.m in Sources */,
 				CD9F7BF51DD7E804002E3C01 /* StartViewController.m in Sources */,
-				CD9F7C151DD7FB8F002E3C01 /* GameEngine.swift in Sources */,
 				CD9F7C131DD7F2BA002E3C01 /* PJMRobotController.m in Sources */,
+				CDCF918B1DD88AD600065B3F /* PartyRobotController.m in Sources */,
 				3F19C53418FCC73B00F53020 /* main.m in Sources */,
 				3F19C54518FCC7DF00F53020 /* AppDelegate.m in Sources */,
-				CD9F7C1B1DD80E65002E3C01 /* DrawView.m in Sources */,
-				CD9F7C101DD7ECEC002E3C01 /* GameBoardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
