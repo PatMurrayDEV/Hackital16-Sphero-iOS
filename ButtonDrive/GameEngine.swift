@@ -55,12 +55,12 @@ struct Hole  {
 		}
 	
 		let blackPoint = 20
-		//	if(chosenHole.map[ballX][ballY] <= 20) { //This line is broken because of stupid UInts
-		//	stop = true
-		//}
-		//else {
-		//	stop = false
-		//}
+			if(chosenHole.map[ballX][ballY] <= blackPoint) { //This line is broken because of stupid UInts
+			stop = true
+		}
+		else {
+			stop = false
+		}
 		
 		return [succeed, stop]
     }
