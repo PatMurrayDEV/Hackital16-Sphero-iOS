@@ -51,6 +51,8 @@
     
     [[PJMRobotController sharedSingleton].robot setBackLEDBrightness:0.0];
     
+    [[PJMRobotController sharedSingleton] setIntitial];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [[PJMRobotController sharedSingleton].robot setLEDWithRed:0 green:1 blue:0];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{

@@ -19,6 +19,9 @@
 
 @property (strong, nonatomic) UIView *alignmentView;
 
+@property int stroke;
+
+
 
 + (PJMRobotController *) sharedSingleton;
 
@@ -29,6 +32,7 @@
 
 
 - (void) setImageForGame:(UIImage*)image;
+- (void) setIntitial;
 
 
 @end

@@ -28,10 +28,24 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-    
+    [[PJMRobotController sharedSingleton] addObserver:self forKeyPath:@"stroke" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 	
 }
 
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"From KVO");
+    
+    if([keyPath isEqualToString:@"stroke"])
+    {
+        id oldC = [change objectForKey:NSKeyValueChangeOldKey];
+        id newC = [change objectForKey:NSKeyValueChangeNewKey];
+        
+        _strokeLabel.text = [NSString stringWithFormat:@"Stroke: %@", newC];
+        
+        NSLog(@"%@ %@", oldC, newC);
+    }
+}
 
 
 

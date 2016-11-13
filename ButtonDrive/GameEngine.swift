@@ -26,7 +26,8 @@ struct Hole  {
     var chosenHole: Hole
     
     
-    var initialValues : (x: Int, y: Int) = (x: 0, y: 0)
+    var initialX = 0
+    var initialY = 0
 	
 	@objc override init() {
 		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
@@ -52,12 +53,20 @@ struct Hole  {
     
     
     
+    func setInitial(x: Int, y: Int) {
+        initialX = x;
+        initialY = y;
+    }
+    
     // [SUCCESS, STOP]
-    @objc func puttGolfBallTo(ballX: Int, ballY: Int) -> [Bool] {
+    func puttGolfBallTo(ballX: Int, ballY: Int) -> [Bool] {
 		var succeed: Bool
 		var stop: Bool = false
+        
+        let ballXAdjusted = ballX - initialX;
+        let ballYAdjusted = ballY - initialY;
 		
-        if(chosenHole.end.x == ballX && chosenHole.end.y == ballY) {
+        if(chosenHole.end.x == ballXAdjusted && chosenHole.end.y == ballYAdjusted) {
             succeed = true
 		}
 		else {
@@ -65,7 +74,7 @@ struct Hole  {
 		}
 	
 		let blackPoint = 20
-			if(chosenHole.map[ballX][ballY] <= blackPoint) { //This line is broken because of stupid UInts
+			if(chosenHole.map[ballXAdjusted][ballYAdjusted] <= blackPoint) { //This line is broken because of stupid UInts
 			stop = true
 		}
 		else {

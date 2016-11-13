@@ -39,8 +39,7 @@
 @property double angle;
 
 
-@property double initialX;
-@property double inititalY;
+
 
 @end
 
@@ -66,7 +65,12 @@
 
 
 
-
+- (void) setIntitial {
+    
+    [_gameEngine setInitialWithX:_locatorDataMoving.position.x y:_locatorDataMoving.position.y];
+    _stroke = 0;
+    
+}
 
 
 
@@ -229,12 +233,58 @@
                 NSLog(@"x: %@, y: %@", [NSString stringWithFormat:@"%.02f  %@", locatorData.position.x, @"cm"], [NSString stringWithFormat:@"%.02f  %@", locatorData.position.y, @"cm"]);
                 
                 [self stopPressed];
+            } else {
+                NSArray<NSNumber *> *results = [_gameEngine puttGolfBallToBallX:locatorData.position.x ballY:locatorData.position.y];
+                
+                if (results[1].boolValue == YES) {
+                    [self stopPressed];
+                } else if (results[0].boolValue == YES) {
+                    [self win];
+                }
+                
+                
+                
             }
         }
         
         
     }
 }
+
+
+- (void) win {
+    
+    [self stopPressed];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [_robot setLEDWithRed:0 green:1 blue:0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+           [_robot setLEDWithRed:0 green:0 blue:0];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [_robot setLEDWithRed:0 green:1 blue:0];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [_robot setLEDWithRed:0 green:0 blue:0];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        [_robot setLEDWithRed:0 green:1 blue:0];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                            [_robot setLEDWithRed:0 green:0 blue:0];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                                [_robot setLEDWithRed:0 green:1 blue:0];
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                                    [_robot setLEDWithRed:0 green:0 blue:0];
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+    
+}
+
+
+
 
 - (void)swingButtonTouchDown {
     
@@ -284,6 +334,8 @@
     
     _stop = false;
     [self startDriving];
+    
+    _stroke = _stroke + 1;
     
     
     
