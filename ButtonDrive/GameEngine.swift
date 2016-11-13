@@ -44,15 +44,25 @@ struct Hole  {
     
     // [SUCCESS, STOP]
     @objc func puttGolfBallTo(ballX: Int, ballY: Int) -> [Bool] {
-        if(chosenHole.end.x != ballX && chosenHole.end.y != ballY){
-            return([false, false])
-        }else if(ballX == 0 || ballY == 0){
-            return([false, false])
-        }else{
-            return([true, true])
-        }
-        
-        
+		var succeed: Bool
+		var stop: Bool
+		
+        if(chosenHole.end.x == ballX && chosenHole.end.y == ballY) {
+            succeed = true
+		}
+		else {
+			succeed = false
+		}
+	
+		let blackPoint = 20
+		if(chosenHole.map[ballX][ballY] <= 20) { //This line is broken because of stupid UInts
+			stop = true
+		}
+		else {
+			stop = false
+		}
+		
+		return [succeed, stop]
     }
     
     

@@ -15,6 +15,9 @@
 		8134AEA91492966B005F5FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8134AEA81492966B005F5FB4 /* Foundation.framework */; };
 		8134AEB11492966B005F5FB4 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8134AEB01492966B005F5FB4 /* ExternalAccessory.framework */; };
 		8134AEB71492966B005F5FB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8134AEB51492966B005F5FB4 /* InfoPlist.strings */; };
+		922CBA3F1DD844E40038BF8D /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CBA3C1DD844E40038BF8D /* RobotKit.framework */; };
+		922CBA401DD844E40038BF8D /* RobotUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 922CBA3D1DD844E40038BF8D /* RobotUIKit.bundle */; };
+		922CBA411DD844E40038BF8D /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CBA3E1DD844E40038BF8D /* RobotUIKit.framework */; };
 		CD54E7661DD78D3C0074EC6F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */; };
 		CD9F7BD21DD7B792002E3C01 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */; };
 		CD9F7BD41DD7B87F002E3C01 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */; };
@@ -26,9 +29,6 @@
 		CD9F7C151DD7FB8F002E3C01 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */; };
 		CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7C171DD80C46002E3C01 /* CoreImage.framework */; };
 		CD9F7C1B1DD80E65002E3C01 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C1A1DD80E65002E3C01 /* DrawView.m */; };
-		DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFB1B3B471C000D6545 /* RobotKit.framework */; };
-		DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */; };
-		DE526B001B3B471C000D6545 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +45,9 @@
 		8134AEB41492966B005F5FB4 /* ButtonDrive-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ButtonDrive-Info.plist"; sourceTree = "<group>"; };
 		8134AEB61492966B005F5FB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8134AEBA1492966B005F5FB4 /* ButtonDrive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButtonDrive-Prefix.pch"; sourceTree = "<group>"; };
+		922CBA3C1DD844E40038BF8D /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
+		922CBA3D1DD844E40038BF8D /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RobotUIKit.bundle; sourceTree = "<group>"; };
+		922CBA3E1DD844E40038BF8D /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotUIKit.framework; sourceTree = "<group>"; };
 		CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		CD9F7BCE1DD7B66F002E3C01 /* ButtonDrive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButtonDrive-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -61,9 +64,6 @@
 		CD9F7C171DD80C46002E3C01 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		CD9F7C191DD80E65002E3C01 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		CD9F7C1A1DD80E65002E3C01 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
-		DE526AFB1B3B471C000D6545 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = ../../frameworks/RobotKit.framework; sourceTree = "<group>"; };
-		DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = ../../frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
-		DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = ../../frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +75,11 @@
 				CD9F7BD41DD7B87F002E3C01 /* AudioToolbox.framework in Frameworks */,
 				CD9F7BD21DD7B792002E3C01 /* CoreMotion.framework in Frameworks */,
 				CD54E7661DD78D3C0074EC6F /* CoreBluetooth.framework in Frameworks */,
-				DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */,
-				DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */,
-				DE526B001B3B471C000D6545 /* RobotUIKit.framework in Frameworks */,
+				922CBA3F1DD844E40038BF8D /* RobotKit.framework in Frameworks */,
 				8134AEA71492966B005F5FB4 /* UIKit.framework in Frameworks */,
 				8134AEA91492966B005F5FB4 /* Foundation.framework in Frameworks */,
 				8134AEB11492966B005F5FB4 /* ExternalAccessory.framework in Frameworks */,
+				922CBA411DD844E40038BF8D /* RobotUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +89,9 @@
 		8134AE971492966B005F5FB4 = {
 			isa = PBXGroup;
 			children = (
+				922CBA3C1DD844E40038BF8D /* RobotKit.framework */,
+				922CBA3D1DD844E40038BF8D /* RobotUIKit.bundle */,
+				922CBA3E1DD844E40038BF8D /* RobotUIKit.framework */,
 				8134AEB21492966B005F5FB4 /* ButtonDrive */,
 				8134AEA51492966B005F5FB4 /* Frameworks */,
 				8134AEA31492966B005F5FB4 /* Products */,
@@ -111,9 +113,6 @@
 				CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */,
 				CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */,
 				CD54E7651DD78D3C0074EC6F /* CoreBluetooth.framework */,
-				DE526AFB1B3B471C000D6545 /* RobotKit.framework */,
-				DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */,
-				DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */,
 				8134AEA61492966B005F5FB4 /* UIKit.framework */,
 				8134AEA81492966B005F5FB4 /* Foundation.framework */,
 				8134AEB01492966B005F5FB4 /* ExternalAccessory.framework */,
@@ -187,7 +186,7 @@
 				ORGANIZATIONNAME = "Orbotix, Inc.";
 				TargetAttributes = {
 					8134AEA11492966B005F5FB4 = {
-						DevelopmentTeam = CC3KAA4FP8;
+						DevelopmentTeam = N5GM564QWL;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -223,6 +222,7 @@
 				3F19C53A18FCC77200F53020 /* README.txt in Resources */,
 				CD9F7BD81DD7BBEF002E3C01 /* Launch Screen.storyboard in Resources */,
 				CD9F7BD61DD7BA73002E3C01 /* Main.storyboard in Resources */,
+				922CBA401DD844E40038BF8D /* RobotUIKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,8 +336,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CC3KAA4FP8;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				DEVELOPMENT_TEAM = N5GM564QWL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ButtonDrive/ButtonDrive-Prefix.pch";
 				INFOPLIST_FILE = "ButtonDrive/ButtonDrive-Info.plist";
@@ -348,7 +351,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zachknox.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -362,8 +365,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = CC3KAA4FP8;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				DEVELOPMENT_TEAM = N5GM564QWL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ButtonDrive/ButtonDrive-Prefix.pch";
 				INFOPLIST_FILE = "ButtonDrive/ButtonDrive-Info.plist";
@@ -374,7 +380,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.patmurraydev.ButtonDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zachknox.ButtonDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ButtonDrive/ButtonDrive-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
