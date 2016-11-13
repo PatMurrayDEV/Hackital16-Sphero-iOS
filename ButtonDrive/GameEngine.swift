@@ -78,25 +78,43 @@ struct Hole  {
 		
 		for x in 0...1000 {
 			for y in 0...1000 {
-				givingHole.map[x][y] = 0
+				givingHole.map[x][y] = 255
 			}
 		}
-		for y in 0...1000 {
-			givingHole.map[0][y] = 255
+		if(number == 1) {
+			for y in 0...1000 {
+				givingHole.map[0][y] = 0
+			}
+			
+			for y in 0...250 {
+				givingHole.map[500][y] = 0
+			}
+			for x in 500...750 {
+				givingHole.map[x][250] = 0
+			}
+			for y in 250...1000 {
+				givingHole.map[750][y] = 0
+			}
+			
+			givingHole.start = (100, 0)
+			givingHole.end = (550, 1000)
 		}
-		
-		for y in 0...250 {
-			givingHole.map[500][y] = 0
+		else if(number == 2) {
+			for y in 0...600 {
+				givingHole.map[250][y] = 0
+			}
+			for y in 400...1000 {
+				givingHole.map[750][y] = 0
+			}
+			for x in 400...600 {
+				givinghole.map[x][x] = 0
+			}
+			
+			givingHole.start = (125, 0)
+			givingHole.end = (875, 1000)
 		}
-		for x in 500...750 {
-			givingHole.map[x][250] = 0
-		}
-		for y in 250...1000 {
-			givingHole.map[750][y] = 0
-		}
-		
-		givingHole.start = (100, 0)
-		givingHole.end = (550, 1000)
+
+
 		
 	}
     
