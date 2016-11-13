@@ -9,12 +9,12 @@ import UIKit
 
 
 struct Hole  {
-    var map: [UInt8]
+    var map: [[Int]]
     var start: (x: Int, y: Int)
     var end: (x: Int, y: Int)
     
     
-    init(map: [UInt8], start: (x: Int, y: Int), end:(x: Int, y: Int)) {
+    init(map: [[Int]], start: (x: Int, y: Int), end:(x: Int, y: Int)) {
         self.map = map
         self.start = start
         self.end = end
@@ -45,7 +45,7 @@ struct Hole  {
     // [SUCCESS, STOP]
     @objc func puttGolfBallTo(ballX: Int, ballY: Int) -> [Bool] {
 		var succeed: Bool
-		var stop: Bool
+		var stop: Bool = false
 		
         if(chosenHole.end.x == ballX && chosenHole.end.y == ballY) {
             succeed = true
@@ -55,16 +55,43 @@ struct Hole  {
 		}
 	
 		let blackPoint = 20
-		if(chosenHole.map[ballX][ballY] <= 20) { //This line is broken because of stupid UInts
-			stop = true
-		}
-		else {
-			stop = false
-		}
+		//	if(chosenHole.map[ballX][ballY] <= 20) { //This line is broken because of stupid UInts
+		//	stop = true
+		//}
+		//else {
+		//	stop = false
+		//}
 		
 		return [succeed, stop]
     }
-    
+	
+	//Backup plan
+	func predeterminedArray(number: Int) -> Hole {
+		var givingHole: Hole
+		
+		for x in 0...1000 {
+			for y in 0...1000 {
+				givingHole.map[x][y] = 0
+			}
+		}
+		for y in 0...1000 {
+			givingHole.map[0][y] = 255
+		}
+		
+		for y in 0...250 {
+			givingHole.map[500][y] = 0
+		}
+		for x in 500...750 {
+			givingHole.map[x][250] = 0
+		}
+		for y in 250...1000 {
+			givingHole.map[750][y] = 0
+		}
+		
+		givingHole.start = (100, 0)
+		givingHole.end = (550, 1000)
+		
+	}
     
     
     static func pixelValues(fromCGImage imageRef: CGImage?) -> (pixelVals: [UInt8], height: Int, width: Int) {
