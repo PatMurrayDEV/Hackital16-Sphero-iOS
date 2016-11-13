@@ -28,8 +28,8 @@ struct Hole  {
     
     var initialValues : (x: Int, y: Int) = (x: 0, y: 0)
 	
-	@objc override init() {
-		chosenHole = PuttPuttGameLogic.predeterminedArray(number: 1)
+	@objc init(withHole: Int) {
+		chosenHole = PuttPuttGameLogic.predeterminedArray(number: withHole)
 	}
     
     @objc init(image: UIImage, startX: Int, startY: Int, endX: Int, endY: Int) {
@@ -117,7 +117,7 @@ struct Hole  {
 			givingHole.end = (875, 1000)
 		}
         
-        return givingHole;		
+        return givingHole;
 	}
     
     
