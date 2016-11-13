@@ -29,6 +29,10 @@
 		CD9F7C151DD7FB8F002E3C01 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C141DD7FB8F002E3C01 /* GameEngine.swift */; };
 		CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD9F7C171DD80C46002E3C01 /* CoreImage.framework */; };
 		CD9F7C1B1DD80E65002E3C01 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F7C1A1DD80E65002E3C01 /* DrawView.m */; };
+		CDCF91861DD8422100065B3F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDCF91851DD8422100065B3F /* CoreLocation.framework */; };
+		DE526AFE1B3B471C000D6545 /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFB1B3B471C000D6545 /* RobotKit.framework */; };
+		DE526AFF1B3B471C000D6545 /* RobotUIKit.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */; };
+		DE526B001B3B471C000D6545 /* RobotUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		CD9F7C171DD80C46002E3C01 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		CD9F7C191DD80E65002E3C01 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		CD9F7C1A1DD80E65002E3C01 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		CDCF91851DD8422100065B3F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DE526AFB1B3B471C000D6545 /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = ../../frameworks/RobotKit.framework; sourceTree = "<group>"; };
+		DE526AFC1B3B471C000D6545 /* RobotUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RobotUIKit.bundle; path = ../../frameworks/RobotUIKit.bundle; sourceTree = "<group>"; };
+		DE526AFD1B3B471C000D6545 /* RobotUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotUIKit.framework; path = ../../frameworks/RobotUIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCF91861DD8422100065B3F /* CoreLocation.framework in Frameworks */,
 				CD9F7C181DD80C46002E3C01 /* CoreImage.framework in Frameworks */,
 				CD9F7BD41DD7B87F002E3C01 /* AudioToolbox.framework in Frameworks */,
 				CD9F7BD21DD7B792002E3C01 /* CoreMotion.framework in Frameworks */,
@@ -109,6 +118,7 @@
 		8134AEA51492966B005F5FB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDCF91851DD8422100065B3F /* CoreLocation.framework */,
 				CD9F7C171DD80C46002E3C01 /* CoreImage.framework */,
 				CD9F7BD31DD7B87F002E3C01 /* AudioToolbox.framework */,
 				CD9F7BD11DD7B792002E3C01 /* CoreMotion.framework */,

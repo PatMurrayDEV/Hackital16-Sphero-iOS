@@ -186,18 +186,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2gw-IG-1Nf">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="tYo-bQ-bBT"/>
-                                </constraints>
-                                <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="sliderBeSliding:" destination="NZW-nr-cLf" eventType="valueChanged" id="zrT-sd-fXI"/>
-                                    <action selector="sliderTouchEnd:" destination="NZW-nr-cLf" eventType="touchUpInside" id="6rH-4u-rza"/>
-                                    <action selector="sliderTouchEnd:" destination="NZW-nr-cLf" eventType="touchUpOutside" id="fjN-g7-mbf"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -207,8 +195,6 @@
                             <constraint firstItem="wtG-O3-vmq" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leading" id="Akz-NS-8mc"/>
                             <constraint firstItem="etz-t3-OcO" firstAttribute="trailing" secondItem="Raf-JD-18J" secondAttribute="trailingMargin" id="Axv-Xs-Kqg"/>
                             <constraint firstItem="4fZ-zT-9fV" firstAttribute="trailing" secondItem="Raf-JD-18J" secondAttribute="trailingMargin" id="CGY-L5-7Bt"/>
-                            <constraint firstItem="2gw-IG-1Nf" firstAttribute="trailing" secondItem="Raf-JD-18J" secondAttribute="trailingMargin" id="Fg9-6d-b4e"/>
-                            <constraint firstItem="2gw-IG-1Nf" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leadingMargin" id="LqD-vx-f2b"/>
                             <constraint firstItem="vqZ-3C-v6o" firstAttribute="top" secondItem="U37-3p-fp2" secondAttribute="bottom" constant="8" id="M6A-sS-7FL"/>
                             <constraint firstItem="etz-t3-OcO" firstAttribute="top" secondItem="CcE-fm-8LN" secondAttribute="bottom" id="QZr-1T-1mx"/>
                             <constraint firstItem="izA-Vy-rMB" firstAttribute="top" secondItem="wtG-O3-vmq" secondAttribute="bottom" id="Qd5-bo-FMO"/>
@@ -216,7 +202,6 @@
                             <constraint firstItem="vqZ-3C-v6o" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leadingMargin" id="ZIy-0y-p3G"/>
                             <constraint firstItem="Uo8-7Y-Eqc" firstAttribute="top" secondItem="Raf-JD-18J" secondAttribute="top" id="hhe-7U-nfE"/>
                             <constraint firstAttribute="trailing" secondItem="Uo8-7Y-Eqc" secondAttribute="trailing" id="hst-XM-0aG"/>
-                            <constraint firstItem="2gw-IG-1Nf" firstAttribute="top" secondItem="etz-t3-OcO" secondAttribute="bottom" constant="72" id="ibQ-yq-atg"/>
                             <constraint firstItem="wtG-O3-vmq" firstAttribute="top" secondItem="4fZ-zT-9fV" secondAttribute="bottom" constant="8" id="jVM-F5-M3o"/>
                             <constraint firstItem="wtG-O3-vmq" firstAttribute="top" secondItem="Uo8-7Y-Eqc" secondAttribute="bottom" id="oNC-x0-hPg"/>
                             <constraint firstItem="U37-3p-fp2" firstAttribute="trailing" secondItem="Raf-JD-18J" secondAttribute="trailingMargin" id="qqi-dp-bTr"/>
@@ -227,7 +212,6 @@
                     </view>
                     <connections>
                         <outlet property="forceLabel" destination="etz-t3-OcO" id="S7M-w1-AAy"/>
-                        <outlet property="slider" destination="2gw-IG-1Nf" id="5ox-4m-uvH"/>
                         <outlet property="strokeLabel" destination="4fZ-zT-9fV" id="aVa-Nh-RHW"/>
                     </connections>
                 </viewController>
