@@ -83,12 +83,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uo8-7Y-Eqc">
                                 <color key="backgroundColor" red="1" green="0.29840450600000001" blue="0.060627813330000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="swingButtonRelease:" destination="NZW-nr-cLf" eventType="touchUpInside" id="yuv-UI-WP1"/>
                                     <action selector="swingButtonTouchDown:" destination="NZW-nr-cLf" eventType="touchDragInside" id="MKd-kK-8fN"/>
+                                    <outletCollection property="gestureRecognizers" destination="XUS-dq-YUr" appends="YES" id="fJ2-av-F60"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RELEASE TO HIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqZ-3C-v6o">
@@ -117,11 +119,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bG-5y-9Ra">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="DSQ-37-WCY"/>
+                                    <constraint firstAttribute="height" constant="42" id="ZgH-y1-mzZ"/>
+                                </constraints>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="gesturePerformed:" destination="NZW-nr-cLf" eventType="touchUpInside" id="qW8-o1-Xil"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="U37-3p-fp2" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leadingMargin" id="06n-nL-m7K"/>
                             <constraint firstAttribute="trailing" secondItem="wtG-O3-vmq" secondAttribute="trailing" id="1OR-qy-WgO"/>
+                            <constraint firstItem="9bG-5y-9Ra" firstAttribute="top" secondItem="Raf-JD-18J" secondAttribute="top" id="3Ze-Nl-iJA"/>
                             <constraint firstItem="4fZ-zT-9fV" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leadingMargin" id="4Ac-8k-A08"/>
                             <constraint firstItem="wtG-O3-vmq" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leading" id="Akz-NS-8mc"/>
                             <constraint firstItem="4fZ-zT-9fV" firstAttribute="trailing" secondItem="Raf-JD-18J" secondAttribute="trailingMargin" id="CGY-L5-7Bt"/>
@@ -135,6 +148,7 @@
                             <constraint firstItem="wtG-O3-vmq" firstAttribute="top" secondItem="Uo8-7Y-Eqc" secondAttribute="bottom" id="oNC-x0-hPg"/>
                             <constraint firstItem="U37-3p-fp2" firstAttribute="trailing" secondItem="Raf-JD-18J" secondAttribute="trailingMargin" id="qqi-dp-bTr"/>
                             <constraint firstItem="U37-3p-fp2" firstAttribute="top" secondItem="CcE-fm-8LN" secondAttribute="bottom" constant="221" id="xkS-Pc-VRy"/>
+                            <constraint firstAttribute="trailing" secondItem="9bG-5y-9Ra" secondAttribute="trailing" id="zdW-Ev-ugp"/>
                             <constraint firstItem="Uo8-7Y-Eqc" firstAttribute="leading" secondItem="Raf-JD-18J" secondAttribute="leading" id="zte-tu-Ixa"/>
                         </constraints>
                     </view>
@@ -143,9 +157,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10k-vG-JUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" numberOfTouchesRequired="2" id="Tte-h2-ddI">
+                <swipeGestureRecognizer direction="down" numberOfTouchesRequired="2" id="XUS-dq-YUr">
                     <connections>
-                        <action selector="gesturePerformed:" destination="NZW-nr-cLf" id="3S2-JZ-Zb7"/>
+                        <action selector="gesturePerformed:" destination="NZW-nr-cLf" id="dT2-hA-ZWd"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

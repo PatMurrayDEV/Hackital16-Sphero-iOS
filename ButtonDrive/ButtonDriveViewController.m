@@ -27,10 +27,10 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(winOccured)
-                                                 name:@"WIN"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(winOccured)
+//                                                 name:@"WIN"
+//                                               object:nil];
     
 }
 
@@ -66,35 +66,7 @@
 
 
 - (void) winOccured {
-    
-    NSNumber *num = [NSNumber numberWithInt:_strokeCount];
-    
-    
-    NSDictionary *headers = @{ @"content-type": @"application/json"};
-    NSDictionary *parameters = @{ @"name": @"Patrick",
-                                  @"score": num };
-    
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://sphero-golf-score-board.herokuapp.com/"]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"POST"];
-    [request setAllHTTPHeaderFields:headers];
-    [request setHTTPBody:postData];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                    }
-                                                }];
-    [dataTask resume];
-    
+        
     _strokeCount = 0;
     [self setStroke:_strokeCount];
     

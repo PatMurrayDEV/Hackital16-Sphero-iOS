@@ -32,6 +32,9 @@
 @property BOOL performingRandom;
 
 
+@property double initialCompass;
+
+
 
 
 
@@ -75,12 +78,15 @@
     _performingRandom = NO;
     
     self.motionManager = [[CMMotionManager alloc] init];
+    [self.motionManager startDeviceMotionUpdates];
     
     
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager startUpdatingHeading];
     
-    [self swingReleased];
+    _initialCompass = [self.locationManager heading].magneticHeading;
+    
+//    [self swingReleased];
     
 }
 
@@ -130,7 +136,7 @@
     
     [self.motionManager stopDeviceMotionUpdates];
     
-    _angle = [self.locationManager heading].trueHeading;
+    _angle = [self.locationManager heading].magneticHeading;
     
     NSLog(@"MOTION ACC - x: %f, y: %f, z: %f", _currentMaxAccelX, _currentMaxAccelY, _currentMaxAccelZ);
     
@@ -272,9 +278,9 @@
     } else {
         [_robot setLEDWithRed:1 green:0 blue:0];
         [_robot stop];
-        if ((fabs(_locatorDataMoving.position.x - _locatorHole.position.x) <= 10) && (fabs(_locatorDataMoving.position.y - _locatorHole.position.y) <= 10)) {
-            [self win];
-        }
+//        if ((fabs(_locatorDataMoving.position.x - _locatorHole.position.x) <= 10) && (fabs(_locatorDataMoving.position.y - _locatorHole.position.y) <= 10)) {
+//            [self win];
+//        }
         return;
     }
     
@@ -287,7 +293,7 @@
     _angle = 0;
     [self spheroCommand];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"WIN" object:self];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"WIN" object:self];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [_robot setLEDWithRed:0 green:1 blue:0];
